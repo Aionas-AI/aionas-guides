@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install or update Aionas</title>
+<meta name="description" content="How to install or update Aionas on your computer: one command from your browser, about two minutes.">
+<style>
+  :root {
+    --bg: #f3ece1; --card: #fffdf8; --ink: #1d2430; --soft: #5f6672; --line: #e3dccf;
+    --teal: #0f6f86; --green: #0b7a5a; --green-soft: #dcefe8; --note: #fdf1dc; --note-ink: #6d4508;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17191d; --card: #22252b; --ink: #ece8df; --soft: #a8a297; --line: #33373e;
+      --teal: #5cc3dc; --green: #4cc2a4; --green-soft: #1d3a33; --note: #3a2e1a; --note-ink: #f2c98a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17191d; --card: #22252b; --ink: #ece8df; --soft: #a8a297; --line: #33373e;
+    --teal: #5cc3dc; --green: #4cc2a4; --green-soft: #1d3a33; --note: #3a2e1a; --note-ink: #f2c98a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 34px; line-height: 1.15; margin: 0 0 10px; color: var(--teal); letter-spacing: -0.01em; }
+  .lede { color: var(--soft); margin: 0 0 18px; font-size: 18px; }
+  .when { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 24px; }
+  .when div { background: var(--card); border-radius: 14px; padding: 14px 16px; box-shadow: 0 2px 8px rgba(60,40,20,.06); }
+  .when b { display: block; margin-bottom: 2px; }
+  .when span { color: var(--soft); font-size: 15px; }
+  .auto { background: var(--green-soft); color: var(--green); border-radius: 14px; padding: 12px 16px; font-weight: 600; margin: 0 0 24px; }
+  video { width: 100%; border-radius: 14px; display: block; margin: 0 0 28px; background: #000; }
+  .step { background: var(--card); border-radius: 18px; padding: 22px 24px; margin: 0 0 16px; box-shadow: 0 2px 10px rgba(60,40,20,.07); display: grid; grid-template-columns: 44px 1fr; gap: 0 16px; }
+  .num { width: 40px; height: 40px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 700; display: grid; place-items: center; font-size: 19px; }
+  .step h2 { margin: 6px 0 6px; font-size: 21px; }
+  .step p { margin: 6px 0; }
+  .body { min-width: 0; }
+  figure { margin: 14px 0 4px; }
+  figure img { width: 100%; border-radius: 10px; border: 1px solid var(--line); display: block; }
+  figcaption { color: var(--soft); font-size: 14px; margin-top: 6px; }
+  details { margin-top: 10px; }
+  summary { cursor: pointer; color: var(--teal); font-weight: 600; font-size: 15.5px; }
+  details img { max-width: 100%; border-radius: 10px; border: 1px solid var(--line); margin-top: 10px; display: block; }
+  code { font: 14px "SF Mono", Menlo, Consolas, monospace; background: var(--line); padding: 1px 6px; border-radius: 6px; }
+  .note { background: var(--note); color: var(--note-ink); border-radius: 12px; padding: 12px 14px; margin: 10px 0 2px; font-size: 15.5px; }
+  .aside { border: 2px dashed var(--line); background: transparent; box-shadow: none; }
+  .aside .num { background: var(--soft); }
+  footer { color: var(--soft); font-size: 15px; margin-top: 26px; }
+  footer p { margin: 6px 0; }
+  @media (max-width: 640px) { .when { grid-template-columns: 1fr; } .step { grid-template-columns: 1fr; } .num { margin-bottom: 6px; } h1 { font-size: 28px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Install or update Aionas on your computer</h1>
+  <p class="lede">About two minutes. Start in your browser, run one command, then finish in your browser.</p>
+
+  <div class="when">
+    <div><b>A new computer</b><span>The first time you use your AI tools on it.</span></div>
+    <div><b>Where your AI tools run</b><span>VS Code Remote, SSH or a cloud workspace? Run it on that remote machine.</span></div>
+    <div><b>An older install</b><span>Run it again to bring it up to the newest version.</span></div>
+  </div>
+  <p class="auto">Install once per computer. After that, the Aionas plugin updates itself with every Aionas release.</p>
+
+  <video src="install-or-update-aionas.mp4" poster="poster.jpg" controls preload="metadata"></video>
+
+  <section class="step">
+    <div class="num">1</div>
+    <div class="body">
+      <h2>Sign in and copy your personal command</h2>
+      <p>Sign in to your company's Aionas address (it looks like <code>your-company.aionas.ai</code>) and open <b>Apps → Connect this computer</b>. Pick macOS, Windows or Linux, then click <b>Copy command</b>.</p>
+      <p class="note">The command is personal. It ends with a one-time pairing code (<code>--pair ist-…</code>) that links the install to your signed-in browser, so it works once and expires after 15 minutes. Copy a fresh one from the page each time, and don't share it.</p>
+      <figure><img src="images/1-apps-command.jpg" alt="The Apps page with Connect this computer: macOS, Windows and Linux buttons, the command, Copied, and Waiting for your computer"><figcaption>What it looks like: the command is copied, and the page waits for your computer.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="num">2</div>
+    <div class="body">
+      <h2>Paste it on the computer where your AI tools run</h2>
+      <p>Open a terminal there (on macOS the Terminal app, on Windows PowerShell), paste the command and press Return. If you use VS Code Remote or SSH, use a terminal on the remote machine.</p>
+      <p>You don't need an email code: the install recognizes your signed-in browser. The terminal shows a few short lines and then waits for you in the browser.</p>
+      <figure><img src="images/2-terminal.jpg" alt="A terminal over the Apps page showing Connecting this computer to Aionas, Confirm in your browser, Waiting for your choices in the browser"><figcaption>What it looks like: “Confirm in your browser”, then “Waiting for your choices in the browser…”.</figcaption></figure>
+      <details><summary>Show a real screenshot</summary><img src="images/real-terminal.png" alt="Real terminal transcript of the install"><figcaption>From a demo environment; the computer name is blurred.</figcaption></details>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="num">3</div>
+    <div class="body">
+      <h2>Back in the browser: is this your computer?</h2>
+      <p>The page shows your computer's name. Click <b>Yes, this is my computer</b>. Aionas then checks the AI tools on that computer.</p>
+      <figure><img src="images/3-is-this-your-computer.jpg" alt="The page asks: MacBook-Pro (macOS) connected — is this your computer? with Yes and No buttons"><figcaption>What it looks like.</figcaption></figure>
+      <details><summary>Show a real screenshot</summary><img src="images/real-is-this-your-computer.png" alt="Real screenshot of the is-this-your-computer step"><figcaption>From a demo environment; the computer name and command are blurred.</figcaption></details>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="num">4</div>
+    <div class="body">
+      <h2>See what will happen to each tool, then Save &amp; apply</h2>
+      <p>Each AI tool found on the computer gets one line: whether it will connect through your organization, or stay on your own plan and send usage data only. Where it's your call, you choose. For a paid plan, <b>Who pays for this plan?</b> is already answered from your work email; change it only if you pay yourself.</p>
+      <p>Nothing changes on your computer until you click <b>Save &amp; apply</b>.</p>
+      <figure><img src="images/4-what-will-happen.jpg" alt="Here is what will happen on this computer: Claude Code stays on your own plan, Who pays for this plan, GitHub Copilot and Cursor usage data only, Save & apply"><figcaption>What it looks like, for one example computer. Your list shows your own tools.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="num">5</div>
+    <div class="body">
+      <h2>Done. Restart your AI tools</h2>
+      <p>The page lists what happened to each tool. Start a new Claude Code session (in VS Code, reload the window), and restart any app the terminal names. Sessions that were already open keep the old settings.</p>
+      <figure><img src="images/5-done.jpg" alt="Done. Here is what happened on this computer"><figcaption>What it looks like.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="step aside">
+    <div class="num">?</div>
+    <div class="body">
+      <h2>Not signed in to Aionas?</h2>
+      <p>If you open the page without signing in, the command has no pairing code. The terminal then asks for <code>Your work email:</code> and the 6-digit code Aionas emails you (<code>Enter the code:</code>). The code stays hidden while you type. After that, continue with step 3 in the browser.</p>
+      <figure><img src="images/6-email-code.jpg" alt="A terminal asking Your work email and Enter the code"><figcaption>What it looks like.</figcaption></figure>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>Want to undo it?</b> The same page shows “Want to go back?” with a command that puts your tools back exactly as they were. Even offline: on a Mac, double-click <b>Disconnect Aionas</b> in the <code>.aionas</code> folder of your home folder; on Linux, run <code>~/.aionas/disconnect-aionas.sh</code>.</p>
+    <p><b>Stuck?</b> Use <b>Report an issue</b> in the Aionas dashboard.</p>
+  </footer>
+</main>
+</body>
+</html>
